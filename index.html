@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <!-- Jeff   6/10/2022
+
+
+    https://stackoverflow.com/questions/69198265/how-to-add-and-remove-items-from-array-with-a-text-input-field
+     -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homemade Calculator - Array w/ type conversion</title>
+    <link rel="stylesheet" href="css/practice.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- This works w/ Sandbox -->
+
+    <!-- Favicon ( updated 4/8/2022    https://favicomatic.com/   )-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicomatic/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicomatic/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/favicomatic/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/favicomatic/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128">
+    <meta name="application-name" content="&nbsp;">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicomatic/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="images/favicomatic/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="images/favicomatic/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="images/favicomatic/mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="images/favicomatic/mstile-310x310.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    
+ 
+      
+  <div class="grid">
+
+        
+        <div class="title"><h1>Calculator</h1></div>
+  
+        <div class="form">
+            <input type="number" id="Text1" value="" onkeypress="return onlyNumberKey(event)">
+            <br>
+            <input id="Button1" type="button" value="Remove item 1" onclick="RemoveOne()">
+            <br><br>
+            <input type="number" id="Text2" value="" onkeypress="return onlyNumberKey(event)">
+            <br>
+            <input id="Button2" type="button" value="Remove item 2" onclick="RemoveTwo()">
+        </div>
+        <div class="buttons">
+            <button id="addButton" type="button" value="add" onclick="Add()"><img src="images/addition24px.png" alt=""></button>
+            <button id="subtractButton" type="button" value="subtract" onclick="Subtract()"><img src="images/subtract24px.png" alt=""></button>
+            <button id="multiplyButton" type="button" value="multiply" onclick="Multiply()"><img src="images/multiply24px.png" alt=""></button>
+            <button id="divideButton" type="button" value="divide" onclick="Divide()"><img src="images/divide24px.png" alt=""></button>
+        </div>
+
+        <div class="answer">
+        <div><h3>Answer is: </h3></div>
+        <h3 class="info"><div id="info1"></div></h3>
+        </div>
+      
+    </div>  
+ 
+        
+        <!-- onkeypress="return onlyNumberKey(event)" -->
+
+        <script>
+             function onlyNumberKey(e) {
+                // Only ASCII character in that range allowed
+               var ASCIICode = (e.which) ? e.which : e.keyCode
+
+             if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+               return false;
+               return true;
+            }
+        </script>
+
+    
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/practice.js"></script>   
+</body>
+</html>
+
